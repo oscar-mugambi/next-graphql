@@ -1,5 +1,12 @@
 import 'reflect-metadata';
 import { ApolloServer } from 'apollo-server-micro';
+import { buildSchema, Resolver, Query, Arg, ObjectType, Field, ID } from 'type-graphql';
+
+@ObjectType()
+export class Dog {
+  @Field(() => ID)
+  name: string;
+}
 
 const server = new ApolloServer({});
 
