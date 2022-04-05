@@ -16,6 +16,10 @@ export class DogResolver {
   }
 }
 
+const schema = await buildSchema({
+  resolvers: [DogResolver],
+});
+
 const server = new ApolloServer({});
 
 export const config = {
