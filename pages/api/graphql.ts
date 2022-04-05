@@ -8,6 +8,14 @@ export class Dog {
   name: string;
 }
 
+@Resolver(Dog)
+export class DogResolver {
+  @Query(() => [Dog])
+  dogs(): Dog[] {
+    return [{ name: 'Bo' }, { name: 'Lassie' }];
+  }
+}
+
 const server = new ApolloServer({});
 
 export const config = {
