@@ -20,7 +20,9 @@ const schema = await buildSchema({
   resolvers: [DogResolver],
 });
 
-const server = new ApolloServer({});
+const server = new ApolloServer({
+  schema,
+});
 
 export const config = {
   api: {
